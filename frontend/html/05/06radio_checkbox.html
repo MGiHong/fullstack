@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <title>폼 요소</title>
+</head>
+
+<body>
+    <form>
+        <fieldset>
+            <legend >신청 과목</legend>
+            <p>이 당에 신청할 과목을 선택하세요(1과목만) 가능</p>
+            <label><input type="radio" name="subject" value="speaking">회화 </label>
+            <label><input type="radio" name="subject" value="grammar">문법 </label>
+            <label><input type="radio" name="subject" value="writing">작문 </label>
+<!-- 
+            <label><input type="radio" name="subject" >회화 </label> 
+            <label><input type="radio" name="subject" >문법 </label>
+            <label><input type="radio" name="subject" >작문 </label> -->
+        </fieldset>
+ <!-- radio 와 checkbox 는 반드시 value 속성이 기술되어야 하는것이 필수조건이다(value속성 미지정시 어떠한 값을 선택했는지 확인할수없음)-->
+        <fieldset>
+            <legend>메일링</legend>
+            <p>메일로 받고 싶은 뉴스 주제를 선택해 주세요(복수 선택 가능)</p>
+            <label><input type="checkbox" name="mailing" value="news">해외 단신 </label>
+            <label><input type="checkbox" name="mailing" value="dialog">5분 회화 </label>
+            <label><input type="checkbox" name="mailing" value="pops">모닝 팝스 </label>
+
+            <!-- <label><input type="checkbox" name="mailing" >해외 단신 </label>
+            <label><input type="checkbox" name="mailing" >5분 회화 </label>
+            <label><input type="checkbox" name="mailing" >모닝 팝스 </label> -->
+        </fieldset>
+
+        <fieldset>
+            <legend>과 티셔츠 설문</legend>
+            <p>올해 과 티(T)를 만들려고 합니다. 원하는 색상을 추천해 주세요.</p>
+            <label>선호색상
+                <input type="color" name="color">
+                <input type="color" name="color" value="#F0F8FF"></label>
+            </label>
+        </fieldset>
+        <input type="submit" value="전송">
+    </form>
+
+
+
+
+</body>
+
+</html>

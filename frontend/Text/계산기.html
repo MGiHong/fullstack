@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>계산기 만들기.</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../Text/계산기.css">
+
+
+
+
+
+</head>
+
+<body>
+    <div class='mainbox'>
+        <div>
+            <div class="inputmain">
+                <p id="textbox" class="textbox">0</p>
+            </div>
+        </div>
+        <!-- <input type="text" class="inputmain" id="mainbox" placeholder="0"> -->
+        <div class="button fisrt">
+            <button onclick="buttonAC()">AC</button>
+            <button onclick="buttonR()">Enter</button>
+            <button id="key--delete" onclick="button('-')">Del</button>
+        </div>
+
+        <div class="button">
+            <button onclick="button(7)">7</button>
+            <button onclick="button(8)">8</button>
+            <button onclick="button(9)">9</button>
+            <button class="op" onclick="buttonm('+')">+</button>
+        </div>
+        <div class="button">
+            <button onclick="button(4)">4</button>
+            <button onclick="button(5)">5</button>
+            <button onclick="button(6)">6</button>
+            <button class="op" onclick="buttonm('-')">-</button>
+        </div>
+        <div class="button">
+            <button onclick="button(1)">1</button>
+            <button onclick="button(2)">2</button>
+            <button onclick="button(3)">3</button>
+            <button class="op" onclick="buttonm('*')">*</button>
+        </div>
+        <div class="button last">
+            <button onclick="button(0)">0</button>
+
+            <button id="isDeci" onclick="button('.')">.</button>
+            <button class="op" onclick="buttonm('/')">/</button>
+        </div>
+
+    </div>
+
+
+    <script>
+
+        const textbox = document.getElementById("textbox");
+        let op = undefined;
+        var Value = false;
+        let input = false;
+        let isDeci = false;
+        var int2;
+        var int;
+        var i = 0;
+        // 연산자 버튼
+        function buttonm(opValue) {
+            textbox.innerText = 0;
+
+            console.log("int: ", int);
+            console.log("int2: ", int2);
+            if (opValue == '-') {
+                if (textbox.innerText == "-0") {
+                    textbox.innerText = "0";
+
+                }
+
+            }
+
+            if (opValue != undefined && input) {
+                buttonR();
+            }
+            op = opValue;
+
+            console.log("op: ", op);
+            console.log("Value: ", Value);
+            input = false;
+            isDeci = false;
+        }
+        // 결과 버튼
+        function buttonR() {
+            console.log("int: ", int);
+            console.log("Number(textbox.innerText): ", Number(textbox.innerText));
+            if (op == undefined) return;
+            console.log("op: ", op);
+            switch (op) {
+                case '+': int += Number(textbox.innerText); break;
+                case '-': int -= Number(textbox.innerText); break;
+                case '*': int *= Number(textbox.innerText); break;
+                case '/': int /= Number(textbox.innerText); break;
+
+            }
+            input = false;
+            op = undefined;
+            isDeci = false;
+            textbox.innerText = int;
+
+            Value = true;
+            int2 = null;
+            i = 0;
+        }
+
+
+
+        //  숫자버튼
+        function button(pad) {
+
+            var number = pad;
+            console.log("botton:" + (pad));
+            if (Value == false) {
+
+                if (!isNaN(Number(number))) {
+                    if (textbox.innerHTML == 0) textbox.innerHTML = pad;
+                    else { textbox.innerText += (pad); }
+
+
+                } if (pad == '.') {
+                    if (textbox.innerText.indexOf('.', textbox.innerText.indexOf(1)) < 0) {
+                        textbox.innerText += (pad);;
+                    }
+
+                }
+            } else {
+                for (i; i < 1; i++) {
+                    textbox.innerText = 0;
+                }
+                if (!isNaN(Number(number))) {
+                    if (textbox.innerHTML == 0) textbox.innerHTML = pad;
+                    else { textbox.innerText += (pad); }
+
+
+                } if (pad == '.') {
+                    if (textbox.innerText.indexOf('.', textbox.innerText.indexOf(0)) < 0) {
+                        textbox.innerText += (pad);;
+                    }
+
+                }
+            }
+
+
+            if (Value == false) {
+                if (op == undefined) {
+                    int = Number(textbox.innerText);
+                } else int2 = Number(textbox.innerText);
+            } else if (Value == true && op == undefined) {
+                int = 0;
+                int = Number(textbox.innerText);
+            } else { int2 = Number(textbox.innerText); }
+
+
+
+            console.log(" textbox.innerText: ", textbox.innerText);
+            console.log(" textbox.int: ", int);
+            console.log(" textbox.int2: ", int2);
+        }
+
+
+        // 초기화 버튼
+        function buttonAC() {
+            textbox.innerText = 0
+            op = undefined;
+            Value = false;
+            input = false;
+            isDeci = false;
+            int = false;
+            int2;
+            i = 0;
+        }
+
+
+
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>가상클래스(:) 선택자 -상태 의사 클래스(UI element states pseudo-class)</title>
+<style>
+/* 체크된 input 요소를 선택 */
+input:checked {height: 50px;width: 50px; ;}
+/* input 요소에서 :disabled(비활성화) 속성을 가진 요소 */
+input:disabled{background: red;}
+/* input 요소에서 :disabled(비활성화) 속성이 없는 요소 */
+input:enabled{background: #ff0;}
+
+</style>
+
+</head>
+
+<body>
+<form>
+<label> First name: <input type="text" name="first" value="Mickey"><br></label>
+<label>Last name : <input type="text" name="last" value="Mouse" id="Last name"><br></label>
+Country : <input type="text" name="conuntry" value="Disneyland" disabled>
+    <br><br><br>
+
+<label> <input type="radio" value="male" name="gender">Male <br></label> 
+ <input type="radio" value="female" name="gender" id="gender"><label for="gender"> Female </label><br> 
+<label> <input type="checkbox" name="vehicle" value="Bike"> I habe a bike<br></label> 
+<label> <input type="checkbox" name="vehicle" value="Car"> I habe a car</label>  <br><br>
+
+<input type="hidden" name="hid" value="감춘 값">
+<input type="text" name="gen" value="감추지 않은 값" readonly>
+
+<input type="submit"><input type="reset">
+
+</form>
+    
+
+
+
+
+</body>
+
+</html>

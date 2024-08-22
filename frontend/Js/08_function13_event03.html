@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <script>
+        function checkForm() {
+            // 체이닝 방식 : .(접근연산자)를 이용하여 여러개의 속성을 나열하는 방법
+            // 체크박스 체크여부 확인 [하나]
+            // checked : 
+            // 공간자리에 있는 경우 : 체크여부를 설정 (true => 체크 , false =>해제)
+            // 값자리에 있는 경우 : 체크된 여부를 (true: 체크된상태 , false : 헤제된 상태)
+
+            var chk1 = document.frmJoin.U_checkAgreement1.checked;
+            var chk2 = document.frmJoin.U_checkAgreement2.checked;
+            if (!chk1) {
+                alert("약관1에 동의 해주세요");
+                return false;
+            }
+            if (!chk2) {
+                alert('약관2에 동의해 주세요');
+                return false;
+            }
+            frmJoin.fall.checked = true;
+            
+            var isSeaeonChk = false;
+            var arr_Season = document.getElementsByName('SEASON');
+            // 체크박스 체크여부 확인 [동일 이름을 가진 체크박스 여러개일 경우]
+            for (var i = 0; i < arr_Season.length; i++) {
+                if (arr_Season[1].checked == true) {
+                    isSeaeonChk = true;
+                    break;
+                }
+            }
+            if (!isSeaeonChk) {
+                alert("계절의 종류를 한개 이상 선택해주세요.");
+                return false;
+            }
+
+
+        }
+
+    </script>
+
+</head>
+
+<body>
+    <form name="frmJoin" onsubmit="return checkForm()">
+        <label><input type="checkbox" name="U_checkAgreement1" id="u_checkAgreement1">약관동의</label>
+        <label><input type="checkbox" name="U_checkAgreement2" id="u_checkAgreement2">약관동의</label>
+        <br>
+        <br>
+        <label><input type="checkbox" id="spring" name="SEASON" value="1">봄</label>
+        <label><input type="checkbox" id="summer" name="SEASON" value="2">여름</label>
+        <label><input type="checkbox" id="fall" name="SEASON" value="3">가을</label>
+        <label><input type="checkbox" id="winter" name="SEASON" value="4">겨훌</label>
+        <br><br>
+        <input type="submit" value="전송">
+    </form>
+
+
+
+
+
+</body>
+
+</html>

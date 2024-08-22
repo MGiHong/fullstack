@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <style>
+        label {
+            display: inline-block;
+            padding: 15px 30px;
+            border: 1px solid #ddd;
+            margin: 0 0.5px;
+        }
+
+        label:first-of-type {
+            border-right: none;
+            border-radius: 5px 0 0 5px;
+        }
+
+        form>label:not(label:first-of-type) {
+            border-radius: 0 5px 5px 0;
+        }
+
+        input[type=radio]:checked~label[for="genM"] {
+            border: 1px solid rgb(63, 206, 63);
+            background-color:rgb(63, 206, 63) ;
+        }
+       
+   
+        input[type=radio] {
+            display: none;
+        }
+    </style>
+</head>
+
+<body>
+    <form>
+        <input type="radio" name="geder" id="genM" value="남자" >
+        <input type="radio" name="geder" id="genW" value="여자">
+        <label for="genM">남자</label><label for="genW">여자</label>
+
+        <br>
+        <input type="submit" value="전송">
+    </form>
+
+
+
+
+</body>
+
+</html>

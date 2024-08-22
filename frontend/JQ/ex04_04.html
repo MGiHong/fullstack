@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>on</title>
+    <script src="../JQ/jquery/3.7.0/jquery3.7.0.js"></script>
+    <style>
+        #divBox {
+            width: 300px;
+            border: 1px solid #555;
+            padding: 10px;
+        }
+    </style>
+
+    <script>
+        $(document).ready(function () {
+            // 정적이벤트와 동적이벤트
+            // 정적이벤트 : 이미 존재하는 엘리먼트에 이벤트를 등록하는 방식 
+            // 동적이벤트 : 스크립트를 통해 생성된 엘리먼트에 이벤트를 등록하는 방식
+            // (이벤트상속 포함)
+
+            // click() : 클릭이벤트를 처리하고자 할때 정적이벤트임 
+            // $('button[name='btn']') => <button name='btn'>클릭</button>
+            $("button[name='btn']").click(function () {
+                $('body').append('click!!!<br>');
+            });
+
+            // 동적이벤트(라이브 이벤트)등록 방식
+
+
+
+            // 동적이벤트(라이브 이벤트) 등록 방식. 이벤트 상속됨. 
+            // $(document).on('click','button[name='add']',function(){
+            // $('body').on('click','button[name='add']',function(){
+            $('#grdiv').on('click', "button[name='add']", function () {
+                $('#divBox').append("<button name='add'>+</botton>");
+            });
+
+            // 선택자와 지정자가 같을 경우 실행되지 않는다.
+            // $("button[name='add']").on('click', "button[name='add']", function () {
+            //     $('#divBox').append("<button name='add'>+</botton>");
+            // });
+
+
+            // 동적이벤트(라이브 이벤트) 등록 방식이 아님.이벤트는 상속되지 않는다.
+            // $("button[name='add']").on('click', function () {
+            //     $('#divBox').append("<button name='add'>+</botton>");
+            // });
+
+            // $("button[name='add']").click(function () {
+            //     $('#divBox').append("<button name='add'>+</botton>");
+            // });
+        });
+        function btnadd() {
+            $('#divBox').append("<button name='add'>+</botton>");
+        }
+
+    </script>
+
+</head>
+
+<body>
+    <button name="btn" type="button">클릭</button>
+    <!-- <div id="grdiv"> -->
+    <!-- <button type="button" name="add">+</button> -->
+    <button name="add" onclick="btnadd()" type="button">+</button>
+    <div id="divBox"></div>
+    <!-- </div> -->
+
+
+</body>
+
+</html>

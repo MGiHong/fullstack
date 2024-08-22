@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>조상요소 선택자</title>
+    <SCript src="../JQ/jquery/3.7.0/jquery3.7.0.js"></SCript>
+
+    <SCript>
+        $(function () {
+            // $('선택자').closest('조상요소') :
+            // 해당 요소의 조상(부모 포함) 요소들 중 가장 가까운 div요소를 선택함. 
+            // $('.txt1').closest('div').css({
+            // $('.txt1').parents('div').css({
+            $('.txt1').closest('#anDiv').css({
+
+                'background-color': 'yellow',
+                'border': '2px solid #f00',
+                'padding': '10px'
+            });
+        });
+
+    </SCript>
+
+</head>
+
+<body>
+    <div>
+        <h1 class="title">선택자</h1>
+        <div id="anDiv">
+            <div style="background-color: green;">상위 Div</div>
+            <section>
+                <p class="txt1">내용</p>
+            </section>
+
+        </div>
+
+
+    </div>
+
+
+</body>
+
+</html>

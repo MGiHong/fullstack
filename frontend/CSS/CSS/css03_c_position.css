@@ -1,0 +1,87 @@
+/* z-idex속성은 층 수를 정하는 속성이다. */
+body{
+    margin: 0;
+    padding: 0;
+    background-color: black;
+}
+h2{margin: 0;}
+span{color: wheat;}
+
+div.static{
+    position: static;
+    background-color: aqua;
+    margin: 0;
+    padding: 0;
+}
+
+div.relative{
+    position: relative;
+    left: 30px;
+    top: 20px;
+    background-color: lightcoral;
+}
+
+/* div.relative{
+    position: relative;
+    left: 30px;
+    top: 20px;
+    background-color: lightcoral;
+    z-index: 999;
+} */
+
+div.fixed{
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    width: 300px;
+    background-color: skyblue;
+    /* z-index: 50; */
+}
+div.absolute1{
+    position: absolute;
+    top: 5px;
+    right: 0;
+    width: 300px;
+    background-color: red;
+}
+div.relative2{
+    position: relative;
+    width: 500px;
+    height: 500px;
+    background-color: yellow;
+}
+div.absolute2{
+    position: absolute;
+    top: 80px;
+    right: 0;
+    width: 200px;
+    background-color: white;
+}
+
+div.sticky{
+    position: sticky;
+    top: 0;
+    padding: 5px;
+    background-color: #cae8ca;
+    border: 1px solid #000;
+}
+
+div.sticky{ 
+    position: sticky;
+    bottom: 0;
+    padding: 5px;
+    background-color: #cae8ca;
+    border: 1ps solid #000;
+    /* z-index: 9999; */
+}
+ /* z-index 속성:반드시 position 라는 속성이 같이 기술되어야하며 단 position 의값이 static 일경우에는 속성이 적용되지않는다. */
+
+ /* position: fixed;
+ :자신이 고정하고자하는 좌표값 부분에만 일부 고정을 시키고 나머지 영역은 인식을 하지 못하도록 붕 떠있으므로 만약 그 뒤에 데이터가 있는 경우 해당 엘리먼트의 위쪽이나 아래쪽으로 지나가게 된다.
+ 자신을 감싸고 있는 태그가 존재해도 자신의 부모로는 body 태그만 인정하는 속성임(방향의 기준점이 body 태그가됨) */
+
+ /* position : absolute ;
+: 엘리먼트의 영역이 고정되어 있지 않고 붕 떠있는 속성임.
+좌표값만 고정됨.
+:부모를 지정해 주지않으면 body 태그를 기준으로 좌표를 정할 수 있다.
+:부모를 지정해주면(relatiove 속성을 부모 태그에 부여한 것을 말함) 부모태그를 기준으로 좌표를 정할 수 있다. */

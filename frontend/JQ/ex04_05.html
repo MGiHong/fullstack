@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="../JQ/jquery/3.7.0/jquery3.7.0.js"></script>
+    <style>
+        ul {
+            float: left;
+            margin: 30px;
+        }
+    </style>
+    <script>
+        $(function () {
+            // $('a').click(function () {
+            //     // $(this).attr('href') =>'img/cute_dog.jpg'
+            //     $('img').attr('src', $(this).attr('href'));
+            //     console.log('this', this);
+            //     return false; //현재 페이지에 이미지 표시하도록 설정
+               
+                
+            $('a').click(function (e) {
+                e.preventDefault();  // 기본적으로 가지고있는 이벤트를 막아줘.  가장 처음에 기술 권장
+                //e.target =event.target =this =<a href="../img/cute_dog.jpg">사진1</a> / <a href="../img/img_girl.jpg">사진2</a>
+                $('img').attr('src', $(this).attr('href'));
+                //현재 페이지에 이미지 표시하도록 설정
+                // return false; 
+
+            });
+
+        });
+
+
+    </script>
+</head>
+
+<body>
+    <ul>
+        <li><a href="../img/cute_dog.jpg">사진1</a></li>
+        <li><a href="../img/img_girl.jpg">사진2</a></li>
+    </ul>
+    <img>
+
+</body>
+
+</html>

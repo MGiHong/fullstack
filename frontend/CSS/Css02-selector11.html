@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>가상엘리먼트(::) 선택자 -의사 요소 (pseudo-element)선택자</title>
+    <style>
+        /* 브라우저에 보여지느 첫 번째 줄 선택, 블록 요소에만 사용 가능 */
+        p::first-line {
+            background-color: yellow;
+        }
+        p::first-line{
+            font-size: 1px;
+        }
+
+        /* p{background-color: yellow;}
+:optional selector : form 컨트롤 요소 (엘리먼트)중 :required(필수입력) 속성이 없는 요소를 의미한다.
+:optional 선택자는 익스플로러 9버전 이하는 지원되지 않는다. */
+        input:optional {
+            background-color: rebeccapurple;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>WWF의 임무 성명</h1>
+    <p>대통령은 법률이 정하는 바에 의하여 훈장 기타의 영전을 수여한다. 이 헌법공포 당시의 국회의원의 임기는 제1항에 의한 국회의 최초의 집회일 전일까지로 한다. 모든 국민은 근로의 의무를 진다. 국가는
+        근로의 의무의 내용과 조건을 민주주의원칙에 따라 법률로 정한다. 헌법재판소는 법관의 자격을 가진 9인의 재판관으로 구성하며, 재판관은 대통령이 임명한다.</p>
+
+    <h1>optional selector</h1>
+    <form>
+        이름: <input type="text" name="username" value="홍길동"><br>
+        비밀번호: <input type="password" name="username" value="12345" required><br>
+
+        <button type="submit">전송</button>
+    </form>
+
+
+
+
+
+
+
+</body>
+
+</html>

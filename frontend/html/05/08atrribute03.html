@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>폼 태그</title>
+</head>
+
+<body>
+    <h2>input elements</h2>
+    <form method="post">
+        <!--<form method="get" autocomplet="off"-->
+
+        <!-- readonly 오직 읽기만 가능하다.
+ 이전에는 readonly = "ture"로 표현된 속성임.-->
+        <label for="userID">userID</label><br>
+        <input type="text" id="userID" name="userID" value="hgdong" readonly><br>
+        <label for="pwd">Password:</label><br>
+        <input type="password" name="pwd" id="pwd" value="12345678" minlength="4" maxlength="8"><br>
+
+        <!--disabled 비활성화 기능. 브라우저상에서 보임. 서버로 값이 전송되지 않음. maxlength 입력할 수 있는 최대 문자열 길이를 제한. disabled ="true"-->
+
+        <label for="username">Username:</label><br>
+        <input type="text" name="username" id="username" maxlength="3"><br>
+        <label for="job">job:</label><br>
+        <input type="text" id="job" name="job" value="학생" disabled><br>
+
+        <!--
+input type="color" 속성은 색상을 포함해야 하는 입력 필드에 사용된다.
+Tip: tpye="color" 속성은 인터넷 익스플로러11, 사파리 9.1 이전 버전에서는 지원되지않음.
+-->
+
+        <label for="likecolor">Select your favorite color:</label>
+        <input type="color" name="likecolor" id="likecolor"><br>
+
+        <!-- hidden 브라우저상에서 안 보임. 서버로 값이 전송됨.-->
+        <input type="hidden" name="hinput" id="hinput" value="숨긴 값">
+
+        <!--size 문자 입력창이 보여지는 너비를 사이즈로 표현함. -->
+        <label for="etcInfo">그외 정보:</label><br>
+        <input type="text" name="etcInfo" id="etcInfo" size="10"><br><br>
+
+        <textarea name="rowcontent" rows="15" cols="50">시작합니다.</textarea>
+        <br> <!-- textarea 는 엔터치는 공간을 모두 가지고 들어간다.-->
+        <input type="submit" value="가입 하기">
+        <input type="reset"><br><br>
+        
+
+
+
+    </form>
+</body>
+
+</html>

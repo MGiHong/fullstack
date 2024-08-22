@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+       table{
+           
+            border-collapse: collapse;
+        }
+        td{
+            border: solid  1px color black;
+        }
+    </style>
+    <script>
+
+        for(var i = 1; i <= 8; i++ )
+    {
+        switch(i){
+              case 1:
+              document.write('<table><tr><td>' + i + '</td>');
+              break;
+              case 2:
+              document.write('<td>' + i + '</td>'); 
+              break; 
+              case 3:
+              document.write('<td>' + i + '</td>');
+              break;
+              case 4:
+              document.write('<td>' + i + '</td>');
+              break;
+              case 5:
+              document.write('<tr><td>' + i + '</td>');
+                break;
+              case 6:
+              document.write('<td>' + i + '</td>');
+              break;
+              case 7:
+              document.write('<td>' + i + '</td>');
+              break;
+              case 8:
+              document.write('<td>' + i + '</td></tr></table>');
+              break;
+            }
+
+
+    }
+
+
+    let str = "<table>";
+    let i = 1; 
+    while(i<=8){
+        if(i%4 ==1) str+="<tr>";
+        str+="<td>"+i+"</td>"
+        if(i%4 ==0) str+="<td>"+i+"</td>";
+        i++;
+    }
+    str +="</table>";
+    document.write(str);
+
+
+    </script>
+
+</head>
+<body>
+    <span>
+    <table>
+        <tr>
+            <td>1</td>
+            <td>2</td>
+            <td>3</td>
+            <td>4</td>
+        </tr>
+        <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+    </table>
+
+    
+</body>
+</html>

@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+    <title>가상클래스 : 선택자 -구조 의사 클래스</title>
+    <style>
+        /* 가장 첫번째 p요소안의 모든 서체 색상 */
+        p:first-of-type {
+            color: blue;
+        }
+
+
+        /* 가장 마지막 p 요소안의 후손 em요소들의 서체 색상 */
+        p:last-of-type  em{color: red;}
+
+        /* p요소 중 끝에서 세 번째 em 엘리먼트의 배경색 */
+        p:nth-last-of-type(3)   em {
+            background: honeydew;
+        }
+
+        /* 2번째 p요소의 배경색 => :nth-of-type(값) : 값은 1 부터 시작한다.  */
+        p:nth-of-type(2) {
+            background: red;
+        }
+
+        /* 홀수번째의 해당 요소의 배경색 */
+
+        span:nth-of-type(odd) {
+            background: green;
+        }
+
+        /* 짝수번째의 해당 요소의 배경색 */
+        span:nth-of-type(even) {
+            background: greenyellow;
+        }
+/* 3의 배수에 해당되는 요소 선택 */
+h1:nth-of-type(3n){background:  skyblue;}
+
+/* 3의 배수에 더하기1 한것에 해당되는 요소의 배경색. n은 0부터 시작 */
+h1:nth-of-type(3n+1) {background: gray;}
+
+    </style>
+</head>
+
+<body>
+
+<div>
+<p>p1번. I am a <em>strong</em> person. i am a <em>strong</em> person.</p>
+<p>p2번. I am a <em>strong</em> person. i am a <em>strong</em> person.</p>
+<p>p3번. I am a <em>strong</em> person. i am a <em>strong</em> person.</p>
+<p>p4번. I am a <em>strong</em> person. i am a <em>strong</em> person.</p>
+<hr>
+
+</div>
+<div>
+    <p>p1번. I am a <em>strong</em> person. i am a <em>strong</em> person.</p>
+    <p>p2번. I am a <em>strong</em> person. i am a <em>strong</em> person.</p>
+    <p>p3번. I am a <em>strong</em> person. i am a <em>strong</em> person.</p>
+    <p>p4번. I am a <em>strong</em> person. i am a <em>strong</em> person.</p>
+    <hr>
+
+</div>
+
+<div>
+    <p>p1번. I am a <em>strong</em> person. i am a <em>strong</em> person.</p>
+    <p>p2번. I am a <em>strong</em> person. i am a <em>strong</em> person.</p>
+    <p>p3번. I am a <em>strong</em> person. i am a <em>strong</em> person.</p>
+    <p>p4번. I am a <em>strong</em> person. i am a <em>strong</em> person.</p>
+    <hr>
+</div>
+<div>
+    <p>p1번. I am a <em>strong</em> person. i am a <em>strong</em> person.</p>
+    <p>p2번. I am a <em>strong</em> person. i am a <em>strong</em> person.</p>
+    <p>p3번. I am a <em>strong</em> person. i am a <em>strong</em> person.</p>
+    <p>p4번. I am a <em>strong</em> person. i am a <em>strong</em> person.</p>
+    <hr>
+</div>
+
+
+
+<span>span 1번. I am a strong person. i am a strong person.</span><br>
+<span>span 2번. I am a strong person. i am a strong person.</span><br>
+<span>span 3번. I am a strong person. i am a strong person.</span><br>
+<span>span 4번. I am a strong person. i am a strong person.</span><br>
+<span>span 5번. I am a strong person. i am a strong person.</span><br>
+<hr>
+
+
+<h1>H1_1번  i am a strong person.</h1>
+<h1>H1_2번  i am a strong person.</h1>
+<h1>H1_3번  i am a strong person.</h1>
+<h1>H1_4번  i am a strong person.</h1>
+<h1>H1_5번  i am a strong person.</h1>
+<h1>H1_6번  i am a strong person.</h1>
+<h1>H1_7번  i am a strong person.</h1>
+<h1>H1_8번  i am a strong person.</h1>
+<h1>H1_9번  i am a strong person.</h1>
+
+<hr>
+
+
+
+
+</body>
+
+
+
+</html>

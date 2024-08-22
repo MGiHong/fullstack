@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #demo, #demo2 {
+            color: red;
+        }
+    </style>
+    <script>
+        function spDate() {
+
+            /*
+            Date(): 현재 시간의 정보를 영문 표기법 문자열 값으로 반환 
+            new Date() : 현재시간의 정보와 로컬함수등 전반적인 데이터를 담고 있는 객체 생성 
+            Date.now() : 현재시간의 정보를 UTC 기준으로 1970년 1월1일 0시 0분 0초부터 현재까지 
+            경과된 밀리초를 반환함 긴 숫자값으로 반환을 합니다. 
+            초단위로도 계산을 한다고 합니다. 
+            
+            */
+           let a = Date.now(); //현재시간 반환
+           console.log('로직이 시작시간 :' + a); // 내장객체를 통해서 기록을 남겨주세요 history
+           
+           // 값을 설정을 하는것 .
+           var  d = new Date();
+            // new Date("2020-10-1")
+            // new Date(2020, 10, 1)
+           d.setFullYear(2020);
+           d.setMonth(9); // 9+1 = 10월을 설정한 것입니다. 
+           d.setDate(1);
+
+            //삼항식 : 조건 ? true값 : false값; 
+            //:"0" +(d.gerMonth()) 0을 붙여서 
+            var mon = d.getMonth() >= 9 ? d.getMonth() : "0" + (d.getMonth());
+            var dd = d.getDate() > 9 ? d.getDate() : "0" + d.getDate();
+            var t = d.getHours() > 9 ? d.getHours() : "0" + d.getHours();
+            var min = d.getMinutes() > 9 ? d.getMinutes() : "0" + d.getMinutes();
+
+            var w = d.getDay();
+            var week = ["월요일","화요일","수요일","목요일","금요일","토요일","일요일"]
+           
+            var n = d.getFullYear() + "년" + mon + "월" + dd + "일" +  t + ":" + min + " "
+ + week[w];
+            
+            //자식에 속해있는것을 모두지우고, HTML형식으로 만들으세요.
+            document.getElementById("demo").innerHTML = n;
+            let b= Date.now();
+            console.log("로직 종료시간:" + b);
+
+            document.getElementById("demo2").innerHTML = '걸린시간' + ((b- a)/ 1000);
+
+        }
+
+
+
+    </script>
+</head>
+<body>
+    
+    <h2>fdkgk</h2>
+    <span onclick="spDate()" style="color: blue; cursor: pointer;">설정한 시간은?  </span>
+<span id="demo"></span>
+<span id="demo2"></span>
+
+
+</body>
+</html>

@@ -1,0 +1,87 @@
+* {
+    box-sizing: border-box;
+    user-select: none;
+    font-family: "Kalnia Glaze", sns-serif;
+    font-size: 15px;
+    font-weight: bolder;
+}
+
+.mainbox {
+    width: 380px;
+    height: 500px;
+    margin: 20px;
+    border: 1px solid aquamarine;
+    margin: 200px auto;
+    background-color: aquamarine;
+    border-radius: 25px;
+    box-shadow: 15px 10px 3px rgb(0, 162, 255);
+
+}
+
+.button {
+    display: flex;
+    margin-left: 50px;
+    margin-top: 10px;
+}
+
+button:hover {
+    background-color: rgba(0, 255, 255, 0.589);
+    border: none;
+}
+
+button:active {
+    background-color: aqua;
+    box-shadow: none;
+    border: none;
+}
+
+.inputmain {
+    outline: none;
+    display: inline-block;
+    margin-top: 30px;
+    margin-left: 40px;
+    margin-right: 20px;
+    width: 300px;
+    height: 100px;
+    border: 1px solid #fff;
+    border-radius: 25px;
+    text-align: right ;
+    padding: 30px 1px;
+    background-color: #fff;
+
+}
+#textbox{
+    font-size: 25px;
+    text-align: right ;
+    padding: 30px 1px;
+    display: inline;
+}
+#key--delete{
+    width: 70px;
+
+}
+
+.button.fisrt>button {
+    margin-top: 15px;
+    width: 90px;
+
+}
+
+.button.last>button:nth-of-type(1) {
+
+    width: 130px;
+
+}
+
+button {
+    justify-content: center;
+    align-items: center;
+    margin: 5px;
+    width: 60px;
+    height: 40px;
+    border-radius: 35px;
+    box-shadow: 0 2px 0 0 black;
+    background-color: blanchedalmond;
+    border: 1px solid blanchedalmond;
+
+}

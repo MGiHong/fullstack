@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<title>외부 시트 끌어오기</title>
+<!-- 
+외부CSS ,내부CSS ,외부js,내부js 기술순서
+1.웹에서 제공해주는 외부CSS : <link rel="stylesheet" href="url경로">
+2.내가 만든 외부CSS : <link rel="stylesheet" href="css페이지 경로">
+3.웹에서 제공해주는 외부js : <script src="url경로"></script>
+4.내가만든 외부 js : <script src="js페이지 경로"></script>
+5.내부 CSS : <style></style>태그 안에 기술
+6.내부 js  : <script></script>태그 안에 기술
+-->
+<head>
+        <link rel="stylesheet" href="../CSS/CSS/08_function04.css">
+        <script src="../Js/외부js/08_function04.js"></script>
+ </head>
+    <body id="bgCol">
+        <div style="margin-left: 20px;">
+<h2>JavaScript Function</h2>
+<p>색상을 변경해보세요.</p>
+<button type="button" onclick="changeColor()">색상 변경</button>
+<button type="button" onclick="bgWhite()">초기값으로</button>
+        </div>
+
+    </body>
+</html>

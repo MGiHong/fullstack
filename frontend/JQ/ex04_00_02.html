@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="../JQ/jquery/3.7.0/jquery3.7.0.js"></script>
+    <style>
+        * {
+            user-select: none;
+        }
+
+        .imgBorder {
+            border: 2px solid #000;
+            width: 300px;
+        }
+
+        .iBorder {
+            border: 2px solid rgb(19, 146, 57);
+        }
+
+        #off {
+            display: none;
+        }
+    </style>
+    <script>
+        /*
+        attr 함수: HTML 의 속성(attribute)을 핸들링 함. 정적인 속성을 제어할 때 사용함. 
+        
+        attr("속성명") - HTML Element에 있는 속성 정보를 string로 가져온다. 
+        attr('속성명','속성값')- 해당 요소의 속성 정보를 속성값으로 설정(변경)한다.
+        attr({속성명: 속성값, 속성명:속성값,...})- 해당 요소의 속성 정보를 속성값으로 설정(변경)한다.
+        css 스타일로 기술시 문자열 , 자바스크립트 객채명으로 기술시 카멜 기법
+        다수 속성 설정 변경.
+        remobeAttr('속성명') - 해당 요소의 속성을 제거한다
+        */
+
+        function gbb() {
+            var srcVal = $('#sec_1 img').attr('src');
+            console.log(srcVal);
+
+            // replac('기존 값', '변경할 값') : 자바 스크립트 함수(문자열 대체)
+            $('#sec_1 img').attr({
+                'width': 300,
+                'src': srcVal.replace('off.gif', 'on.gif'),
+                'alt': '불 켜짐',
+                'title': '불 켜짐',
+                'class': 'iBorder'
+            });
+
+            $('#sec_1 img').removeClass('imgBorder');
+
+            $('#sec_1 img').attr({
+                'width': 300,
+                'src': srcVal.replace('off.gif', 'on.gif'),
+                'alt': '불 켜짐',
+                'title': '불 켜짐',
+                'class': 'iBorder'
+            }).removeAttr('class');
+
+            let imgs = document.getElementById('sec_1').getElementsByTagName('img')[0];
+            imgs.setAttribute('width', '300');
+            imgs.setAttribute('src', srcVal.replace('off.gif', 'on.gif'));
+            imgs.setAttribute('alt', '불 켜짐');
+            imgs.setAttribute('title', '불 켜짐');
+            imgs.setAttribute('class', 'iBorder');
+
+            $('#on').hide();
+            $('#off').show();
+        }
+        function gboff() {
+            var srcVal = $('#sec_1 img').attr('src');
+            console.log(srcVal);
+
+            // replac('기존 값', '변경할 값') : 자바 스크립트 함수(문자열 대체)
+            $('#sec_1 img').attr({
+                'width': 300,
+                'src': srcVal.replace('on.gif', 'off.gif'),
+                'alt': '불 꺼짐',
+                'title': '불 꺼짐',
+                'class': 'imgBorder'
+            });
+
+            $('#sec_1 img').removeClass('iBorder');
+
+            $('#sec_1 img').attr({
+                'width': 300,
+                'src': srcVal.replace('on.gif', 'off.gif'),
+                'alt': '불 꺼짐',
+                'title': '불 꺼짐',
+                'class': 'imgBorder'
+            }).removeAttr('class');
+
+            let imgs = document.getElementById('sec_1').getElementsByTagName('img')[0];
+            imgs.setAttribute('width', '300');
+            imgs.setAttribute('src', srcVal.replace('on.gif', 'off.gif'));
+            imgs.setAttribute('alt', '불 꺼짐');
+            imgs.setAttribute('title', '불 꺼짐');
+            imgs.setAttribute('class', 'imgBorder');
+
+            $('#on').show();
+            $('#off').hide();
+        }
+
+
+    </script>
+</head>
+
+<body>
+    <section id="sec_1">
+        <h2>이미지 속성</h2>
+        <p><img src="../img/pic_bulboff.gif" alt="불 꺼짐" title="불 꺼짐" class="imgBorder"></p>
+        <button type="button" onclick="gbb()" id="on">클릭</button>
+        <button type="button" onclick="gboff()" id="off">불꺼짐</button>
+    </section>
+    <h1><strong>객체 조작 및 생성</strong></h1>
+
+
+
+</body>
+
+</html>

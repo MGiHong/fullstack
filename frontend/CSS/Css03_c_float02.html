@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Float 속성</title>
+    <style>
+
+        /* overflow | overflow-x | overflow-y 속성값:
+overflow 속성은 반드시 height 값이 고정값으로 적용되어 있어야만 자신의 영역을 인식하여 넘치는 영역을 자를수 있다.
+        visible : 오버플로가 잘리지 않고 모두 표현. 기본값(디폴트)
+hidden : 오버플로가 잘리고 나머지 내용은 보이지 않음.
+scroll : 오버플로가 잘리지만 나머지 내용은 보이지 않음.
+auto : 오버플로에 대해 자동으로 설정처리.
+만약 오버플로가 잘린 경우는 스크롤을 추가해야만 한다. 자동추가 안 됨. */
+
+        div {
+            border: 3px solid #4caf50;
+            padding: 5px;
+        }
+
+        .img1,
+        .img2 {
+            float: right;
+        }
+
+        .clearfix {
+            overflow: scroll;
+            height: 100px;
+        }
+
+        img {
+            width: 170px;
+            height: 170px;
+        }
+    </style>
+</head>
+
+<body>
+    <h2>Clearfix</h2>
+    <p>In this example, the image teller than the element containing it, and it is floated, so it overflow outside of
+        its container;</p>
+
+    <div>
+        <img class="img1" src="../img/pineapple.jpg" alt="Pineapple">
+        In this example, the image taller than the element containing it, and it is floated, so  it overflow outside of its container;
+    </div>
+
+    <!-- <div class="clearfix" style="clear: right;">
+    <img class="img2" src="../img/pineapple.jpg" alt="Pineapple">
+    텍스트의 수가 적어서 이미지의 높이를 벗어나지 못하면, 
+    그부분을 갑싸고 있는 div박스의 영역이 이미지를 감싸지 못하고,
+    그안으로 들어가게 되는 현상이 발생된다. 이 부분을 해결하기 위해서 넘치는 부분(overflow)의 값을 어떻게 처리할지 설정해주면 된다. 
+</div> -->
+
+
+    <div class="clearfix" style="clear: right;">
+        <img src="../img/pineapple.jpg" alt="Pineapple" class="img2">In this example, the image teller than the element
+        containing it, and it is floated, so it overflow outside of its container;
+    </div>
+
+
+</body>
+
+</html>

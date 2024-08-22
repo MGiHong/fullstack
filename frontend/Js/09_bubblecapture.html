@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>버블링 과 캡쳐</title>
+    <style>
+        .three {
+            border: 1px solid #000;
+            padding: 10px 30px;
+        }
+
+        .evt {
+            border: 1px solid #000;
+            padding: 10px 30px;
+        }
+    </style>
+</head>
+
+<body class="par">
+    <div class="one">
+        <div class="two">
+            <div class="three">클릭</div>
+        </div>
+    </div>
+
+    <h1 class="evt parevt">
+        <a href="09_bubblecapture.html" class="evt">내페이지이동</a>
+    </h1>
+    <script>
+        // 버블링 :하위요소에서 상위요소로 이벤트가 전파되는 방식을 말함. 
+        var divs = document.querySelectorAll("div");
+        divs.forEach(function (div) {
+            div.addEventListener("click", logEvent);
+        });
+        // var evts =document.getElementsByTagName("h1")[0];
+        var evts = document.getElementsByTagName("a")[0];
+        evts.addEventListener("click", logEvent);
+
+        // 캡쳐링 : (버블링과 반대) 상위요소에서 하위요소로 이벤트 탐색 
+        var divs =document.querySelectorAll("div");
+        divs.forEach(function(div){
+            div.addEventListener("click" ,logEvent,{capture :true //default 값은 false 입니다.
+            });
+        });
+
+        function logEvent(event) {
+            event.stopPropagation(); //이벤트가 전파되는 버블링을 막아라.
+            event.preventDefault(); //내 엘리먼트중 디폴트로 가지고있는 이벤트기능을 막아라
+            console.log(event.currentTarget.className);
+        }
+
+
+    </script>
+
+
+</body>
+
+</html>

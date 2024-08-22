@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DDC</title>
+<style>
+    #demo, #demo2{
+        color:red;
+    }
+</style>
+<script>
+    function spdate(){
+        var d = new Date("1980-09-05T18:30");
+        //var d = new Date(1980, 3, 5, 18, 30);
+    
+        // var mon = d.getMonth() + 1 >9? d.getMonth() + 1: 
+        // "0" + (d.getMonth() + 1);        
+        var mon = d.getMonth() + 1 >9? d.getMonth() + 1: 
+        "0" + (d.getMonth() + 1);
+
+        var dd = d.getDate() > 9 ? d.getDate() : "0" + d.getDate();
+        var t = d.getHours() > 9 ? d.getHours() : "0" + d.getHours();
+        var min = d.getMinutes() >9 ? d.getMinutes : "0" + d.getMinutes();
+
+        var w = d.getDay();
+        var week = 
+        ["월요일","화요일","수요일","목요일","금요일","토요일","일요일",];
+
+        var n = d.getFullYear() + "년" + mon + "월" + dd + "일" +  t + ":" + min + " "
+ + week[w];
+        
+        document.getElementById("demo2").innerHTML = n; 
+
+
+    
+    }
+</script>
+
+
+
+    
+</head>
+<body>
+    <!--
+    Date() :현재 날짜를 문자열 자료형으로 가져오는 생성자 함수 
+    자신의 시스템의 설정 시간으로 가져옴. 
+    Date : 현재 날짜의 정보를 가지고 있는 클래스 
+    .. 오늘 날짜 가져옴
+     
+    var d = new Date();
+    var d = new Date(milliseconds); 
+    var d = new Date(dateString);
+    var d = new Date(year, month, day, minutes, seconds, milliseconds);
+    
+    
+    -->
+
+    <h2>Date의 get()함수</h2>
+
+    <span onclick = "document.getElementById('demo').innerHTML = Date()" style="color: blue; cursor: pointer;">지금 시간은?</span>
+     <span id = "demo"></span><br>
+
+
+     <!--주석하나씩 풀어보면서 해보기! -->
+     <span onclick="spdate()" style="color: blue; cursor: pointer;">
+        <!-- <a href="javascript:spdate()" style="color: blue; cursor: pointer;"></a>
+         파일에 대한 경로 시간이나 href : JavaScript라는 함수 입니다. 
+        <a href="onclick = spdate()" style="color: blue; cursor: pointer;">-->
+            설정한 시간
+        </a>
+      
+     </span>
+     <span id = "demo2"></span>
+
+
+
+</body>
+</html>
